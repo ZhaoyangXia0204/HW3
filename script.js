@@ -28,27 +28,28 @@ function generatePassword() {
   var isLow = confirm("Do you want lowercase?");
   var isUp = confirm("Do you want Uppercase?");
   var isSpec = confirm("Do you want special characters?");
- 
+ var NewArr=[];
+  if (isNum === true) {
+    NewArr=NewArr.concat(num);
+    console.log(NewArr);
+  }
+  if (isLow === true) {
+    NewArr=NewArr.concat(eng);
+    console.log(NewArr);
+  }
+  if (isUp === true) {
+    NewArr=NewArr.concat(ENG);
+    console.log(NewArr);
+  }
+  if (isSpec === true) {
+    NewArr=NewArr.concat(spec);
+    console.log(NewArr);
+  }
+
+
   var arr = []
   for (i=0; i<legit;i++){
-    
-    if (isLow === true) {
-      arr.push(eng[Math.floor(Math.random() * eng.length)]);
-      console.log(arr);
-    }
-    if (isLow === true) {
-      arr.push(eng[Math.floor(Math.random() * eng.length)]);
-      console.log(eng[Math.floor(Math.random() * eng.length)])
-      console.log(arr);
-    }
-    if (isUp === true) {
-      arr.push(ENG[Math.floor(Math.random() * ENG.length)]);
-    }
-    if (isSpec === true) {
-      arr.push(spec[Math.floor(Math.random() * spec.length)]);
-      console.log(arr);
-    }
-
+    arr.push(NewArr[Math.floor(Math.random() * NewArr.length)]);
   }
   console.log(arr);
   console.log(arr.join(""));
@@ -58,7 +59,7 @@ function generatePassword() {
   return pwd;
 
   
-  alert(arr);
+ 
 
   
 
